@@ -1,0 +1,44 @@
+<section class = "uploadnow">
+    <img src = " ../../assets/home.jpg">
+    <div class="text-center">
+        <div class="title">
+            File Upload
+        </div>
+        
+            <div class="choose_file">
+                <label for="choose_file">
+                    <input class="form-control" type="file" (change)="onChange($event)"/>
+                </label>
+
+                <button class = "id" type="button" (click)="onFileUpload()" 
+                class="btn btn-success">
+                UPLOAD
+                </button> &nbsp;    
+
+                <form [formGroup] = "form1">
+                    <label for="Predicting Column">Type the Column name
+                        <input type="text" id="predictingcolumn" formControlName="predictingcolumn">
+                    </label>
+                </form>  
+                    <label for="period">Select a period
+                        <br>
+                        <select type="number" [(ngModel)]="value" name="period">
+                            <option value=1>Month</option>
+                            <option value=12>Year</option>
+                           </select>
+                    </label>
+                
+                    <label for="target">Type a target value
+                        <input type="number" [(ngModel)]="val" name="target">
+                    </label>
+            </div>
+            <button class = "id" type="button" (click)="onUpload()" 
+            class="btn btn-success">
+            PREDICT
+            </button><br><br>
+    </div>
+    <button routerLink = "/dashboard" class="next_button">NEXT</button>
+
+    <button routerLink = "/home" class="back_button">BACK</button>
+    
+</section>
